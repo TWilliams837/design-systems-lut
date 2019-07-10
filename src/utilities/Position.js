@@ -1,9 +1,25 @@
+/* eslint-disable */
+
 import { css } from "styled-components";
 
-// CSS Helper
-//  Needed for Props in Mixins
-export const fixedTop = css`
+export const fixed = ({
+  x = 0,
+  y = 0,
+  xProp = "left",
+  yProp = "top"
+} = {}) => css`
   position: fixed;
-  top: ${({ top }) => top + "px"};
-  left: 0;
+  ${yProp}: ${y};
+  ${xProp}: ${x};
+`;
+
+export const absolute = ({
+  x = 0,
+  y = 0,
+  xProp = "left",
+  yProp = "top"
+} = {}) => css`
+  position: absolute;
+  ${yProp}: ${y};
+  ${xProp}: ${x};
 `;
