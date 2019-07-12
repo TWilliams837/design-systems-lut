@@ -7,8 +7,8 @@ const BUTTON_MODIFIERS = {
   font-size: 1rem;
   padding: 3px 10px;
   `,
-  cancel: () => `
-  background: tomato;
+  cancel: ({ theme }) => `
+  background: ${theme.colors.secondary};
   `
 };
 
@@ -18,7 +18,7 @@ export const Button = styled.button`
   color: white;
   font-size: 2rem;
   border: none;
-  background: ${teal};
+  background: ${props => props.theme.colors.primary};
   transition: 0.3s ease box-shadow;
   ${elevation[1]};
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
@@ -28,5 +28,5 @@ export const Button = styled.button`
 `;
 
 export const CancelButton = styled(Button)`
-  background: tomato;
+  background: ${props => props.theme.colors.secondary};
 `;
